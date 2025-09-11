@@ -7,7 +7,7 @@ AS = $(RV_TOOLS)-as --march=rv32i
 LD = $(RV_TOOLS)-ld -b elf32-littleriscv
 OBJCOPY = $(RV_TOOLS)-objcopy
 OBJDUMP = $(RV_TOOLS)-objdump
-SRC = var9
+SRC = test
 
 %.o: %.s
 	$(AS) $< -o $@
