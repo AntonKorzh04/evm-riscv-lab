@@ -2,3 +2,5 @@ src/*.hex
 src/*.swp
 taiga/rtl_work/
 taiga/transcript
+taiga/wlft*
+taiga/tcl_stacktrace.txt
