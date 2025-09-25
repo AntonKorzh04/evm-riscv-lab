@@ -164,12 +164,12 @@ _start:
     add x31, x0, x0
 lp:
         lw x2, 0(x1)
-        add x31, x31, x2 #!
         lw x3, 4(x1)
-        add x31, x31, x3
         lw x4, 8(x1)
-        add x31, x31, x4
         lw x5, 12(x1)
+        add x31, x31, x2
+        add x31, x31, x3
+        add x31, x31, x4
         add x31, x31, x5
         addi x1, x1, elem_sz*enroll
         addi x20, x20, -1
@@ -199,18 +199,17 @@ Disassembly of section .text:
 
 80000010 <lp>:
 80000010:       0000a103                lw      x2,0(x1)
-80000014:       002f8fb3                add     x31,x31,x2
-80000018:       0040a183                lw      x3,4(x1)
-8000001c:       003f8fb3                add     x31,x31,x3
-80000020:       0080a203                lw      x4,8(x1)
-80000024:       004f8fb3                add     x31,x31,x4
-80000028:       00c0a283                lw      x5,12(x1)
+80000014:       0040a183                lw      x3,4(x1)
+80000018:       0080a203                lw      x4,8(x1)
+8000001c:       00c0a283                lw      x5,12(x1)
+80000020:       002f8fb3                add     x31,x31,x2
+80000024:       003f8fb3                add     x31,x31,x3
+80000028:       004f8fb3                add     x31,x31,x4
 8000002c:       005f8fb3                add     x31,x31,x5
 80000030:       01008093                addi    x1,x1,16
 80000034:       fffa0a13                addi    x20,x20,-1
 80000038:       fc0a1ce3                bne     x20,x0,80000010 <lp>
 8000003c:       001f8f93                addi    x31,x31,1
-
 80000040 <lp2>:
 80000040:       0000006f                jal     x0,80000040 <lp2>
 

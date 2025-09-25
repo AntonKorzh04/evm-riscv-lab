@@ -9,13 +9,13 @@ _start:
         la x1, _x
 	add x31, x0, x0
 lp:
-        lw x2, 0(x1)
-        add x31, x31, x2 #!
+         lw x2, 0(x1)
         lw x3, 4(x1)
-        add x31, x31, x3
         lw x4, 8(x1)
-        add x31, x31, x4
         lw x5, 12(x1)
+        add x31, x31, x2
+        add x31, x31, x3
+        add x31, x31, x4
         add x31, x31, x5
         addi x1, x1, elem_sz*enroll
         addi x20, x20, -1
